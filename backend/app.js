@@ -1,23 +1,8 @@
-const express = require('express');
-
 const { TaskManager } = require('./src/core/TaskManager');
 const taskManager = new TaskManager()
-
-const app = express()
-const port = 5001;
-
-const cors = require('cors');
-const { db } = require('./src/core/db/db');
 const { TaskModel } = require('./src/core/db/TaskModel');
-app.use(cors());
-app.use(express.json());
-
-(async () => {
-    const tables = await db.getQueryInterface().showAllTables();
-    if (!tables.includes("tasks")) {
-        await TaskModel.sync();
-    }
-})();
+const { app } = require('./src/config/express');
+const port = process.env.expressPort;
 
 app.get('/getTasks', async (req, res) => {
     res.send(200, await taskManager.getTasksList());
