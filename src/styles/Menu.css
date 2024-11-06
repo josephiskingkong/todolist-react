@@ -1,0 +1,47 @@
+.add-menu {
+  padding: 22px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding-bottom: 32px;
+}
+.add-menu .menu-inputs {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  flex: 1;
+  gap: 6px;
+}
+.add-menu .menu-inputs * {
+  height: 32px;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+  padding: 7px 14px;
+  background-color: #242320;
+  border: 1px solid #a35709;
+  border-radius: 4px;
+  outline: none;
+  color: #f0e3ca;
+}
+.add-menu .menu-inputs *:focus {
+  border: 1px solid #ff8303;
+}
+.add-menu .menu-inputs #description-input {
+  overflow: hidden;
+  resize: none;
+  transition: 0.3s ease-out;
+}
+.add-menu .menu-inputs #description-input:focus {
+  height: 128px;
+  transition: 0.3s ease-out;
+}
+.add-menu #menu-button {
+  width: 70px;
+  height: 70px;
+  background-color: transparent;
+  border-radius: 8px;
+  border: 2px solid #ff8303;
+  cursor: pointer;
+}/*# sourceMappingURL=Menu.css.map */

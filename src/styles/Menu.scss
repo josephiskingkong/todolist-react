@@ -1,0 +1,55 @@
+@import 'variables';
+
+.add-menu {
+  padding: 22px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding-bottom: 32px;
+
+  .menu-inputs {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    flex: 1;
+    gap: 6px;
+
+    * {
+      height: 32px;
+      padding: 0;
+      border: 0;
+      box-sizing: border-box;
+      font-size: 14px;
+      padding: 7px 14px;
+      background-color: $main-color;
+      border: 1px solid $accent-color;
+      border-radius: 4px;
+      outline: none;
+      color: $light-color;
+
+      &:focus {
+        border: 1px solid $accent-active-color;
+      }
+    }
+
+    #description-input {
+      overflow: hidden;
+      resize: none;
+      transition: $input-transition;
+    }
+
+    #description-input:focus {
+      height: 128px;
+      transition: $input-transition;
+    }
+  }
+
+  #menu-button {
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+    border-radius: 8px;
+    border: 2px solid $accent-active-color;
+    cursor: pointer;
+  }
+}

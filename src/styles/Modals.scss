@@ -1,0 +1,241 @@
+@import 'variables';
+
+.modal-overlay {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: $dark-background;
+  display: flex;
+  transition: $dialogue-transition;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  #delete-wrapper {
+    width: 280px;
+    height: 140px;
+    background-color: $main-color;
+
+    .delete-header-line {
+      height: 4px;
+      width: 100%;
+      background: $accent-color;
+    }
+
+    .delete-menu {
+      color: $light-color;
+      font-size: 18px;
+      gap: 30px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      .delete-buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+        .delete-button {
+          width: 64px;
+          height: 24px;
+          background-color: $main-color;
+          border: 1px solid $accent-color;
+          color: $light-color;
+          border-radius: 4px;
+          font-size: 10px;
+          cursor: pointer;
+        }
+
+        .primary-button {
+          border: 1px solid $accent-active-color;
+        }
+      }
+    }
+  }
+
+  #edit-wrapper {
+    width: 90%;
+    height: 50%;
+    background-color: $main-color;
+    position: absolute;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    bottom: 0;
+    display: flex;
+
+    .edit-menu {
+      padding: 18px;
+      color: $light-color;
+      font-size: 18px;
+      gap: 8px;
+      display: flex;
+      flex: 1;
+      align-items: center;
+      flex-direction: column;
+
+      .edit-inputs {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        flex: 1;
+        outline: none;
+        font-size: 14px;
+
+        .edit-input {
+          color: $light-color;
+          border: 1px solid $accent-color;
+          background: $share-button-background;
+          border-radius: 4px;
+          height: 32px;
+          padding: 0px 9px;
+
+          &:focus {
+            outline: none;
+            border: 1px solid $accent-active-color;
+          }
+        }
+
+        #edit-description {
+          color: $light-color;
+          height: 100%;
+          padding: 7px 9px;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+
+      .edit-buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+        .edit-button {
+          width: 64px;
+          height: 24px;
+          background-color: $main-color;
+          border: 1px solid $accent-color;
+          color: $light-color;
+          border-radius: 4px;
+          font-size: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  #info-wrapper {
+    width: 90%;
+    height: 50%;
+    background-color: $main-color;
+    position: absolute;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    bottom: 0;
+    display: flex;
+
+    .info-menu {
+      padding: 18px;
+      color: $light-color;
+      font-size: 18px;
+      gap: 8px;
+      display: flex;
+      flex: 1;
+      align-items: flex-start;
+      flex-direction: column;
+
+      .info-header {
+        width: 100%;
+        text-align: center;
+        font-weight: 700;
+        font-size: 24px;
+      }
+
+      .info-texts {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        flex: 1;
+        outline: none;
+        font-size: 22px;
+
+        .info-title {
+          word-break: break-all;
+          color: $light-color;
+          background: $share-button-background;
+          border-radius: 4px;
+          padding: 0px 9px;
+          font-weight: 600;
+        }
+
+        #info-description {
+          font-size: 16px;
+          color: $light-color;
+          height: 100%;
+          padding: 7px 9px;
+          word-break: break-all;
+        }
+      }
+
+      .edit-buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+        .edit-button {
+          width: 64px;
+          height: 24px;
+          background-color: $main-color;
+          border: 1px solid $accent-color;
+          color: $light-color;
+          border-radius: 4px;
+          font-size: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  
+  #share-menu {
+    position: absolute;
+    bottom: 0;
+    height: 76px;
+    width: 90%;
+    background: $background-color;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+
+    .share-buttons {
+      padding: 14px 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .share-button {
+        width: 48px;
+        height: 48px;
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $share-button-background;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.active-screen {
+  visibility: visible;
+  opacity: 1;
+  transition: $dialogue-transition;
+}

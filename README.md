@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+# 📋 TODO List on Node.js and HTML
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a small pet project that serves as a TODO List application. The backend is developed with Node.js using the Express.js library, while the frontend is built using HTML, JavaScript, and SASS.
 
-## Available Scripts
+## 🚀 Getting Started
 
-In the project directory, you can run:
+### 1. Prerequisites
 
-### `npm start`
+Before you begin, ensure you have the following installed:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Node.js** (version 14 or higher)
+- **PostgreSQL** (version 15)
+- **SASS**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 2. Set Up PostgreSQL
 
-### `npm test`
+- Download and install [PostgreSQL 15](https://www.postgresql.org/download/).
+- Create a new database:
+  ```sql
+  CREATE DATABASE todo;
+  ```
+- Ensure PostgreSQL is running on port `5432` (default port).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 3. Install Dependencies and Start the Server
 
-### `npm run build`
+Navigate to the `backend` directory, install the dependencies, and start the server:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+cd backend
+npm install
+node app.js
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 4. Configuration
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You may need to configure the database connection in `backend/src/core/db/db.js`:
 
-### `npm run eject`
+```javascript
+const { Sequelize } = require('sequelize');
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+const db = new Sequelize(
+    'postgres',
+    'username',
+    'password',
+    {
+        host: 'host',
+        port: 'port',
+        dialect: 'postgres'
+    }
+)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+module.exports = { db };
+```
+Replace `'username'`, `'password'`, `'host'` and `'port'` with your PostgreSQL credentials.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 5. Enjoy the Application
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Once the server is running, you need to run React
 
-## Learn More
+```bash
+cd ../
+npm install
+npm run start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📝 Description
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Initial Screen
 
-### Code Splitting
+Upon the first launch, you will see the main screen with a message saying "No tasks":
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![Main Screen](https://i.imgur.com/i2hswfY.png)
 
-### Analyzing the Bundle Size
+### Managing Tasks
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+You can add, edit, share, or delete tasks using the buttons that appear when you interact with a task:
 
-### Making a Progressive Web App
+- **Add Task**: Create a new task by entering a title and description.
+- **Share Task**: Share the task details with others.
+- **Edit Task**: Modify the details of an existing task.
+- **About Task**: Check more info about your task.
+- **Delete Task**: Remove a task from the list.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+![Main Screen with Tasks](https://i.imgur.com/1QcDwNp.png)
 
-### Advanced Configuration
+### Deleting a Task
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Click the delete button to remove a task from the list:
 
-### Deployment
+![Delete Screen](https://i.imgur.com/D8LB5c2.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## ✨ Features
 
-### `npm run build` fails to minify
+- 📝 **Create Tasks**: Add new tasks with a title and description.
+- 🖊️ **Edit Tasks**: Modify existing tasks with updated information.
+- ✉️ **Share Tasks**: Share your tasks with others using social media.
+- 🗑️ **Delete Tasks**: Remove tasks that are no longer needed.
+- ☝🏽 **Drag 'n' Drop**: Drag your tasks to change their order.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📌 Developed By
+
+**[@josephiskingkong](https://github.com/josephiskingkong)**
+
