@@ -2,6 +2,7 @@ const { TaskManager } = require('./src/core/TaskManager');
 const taskManager = new TaskManager()
 const { TaskModel } = require('./src/core/db/TaskModel');
 const { app } = require('./src/config/express');
+require('dotenv').config()
 const port = process.env.expressPort;
 
 app.get('/getTasks', async (req, res) => {
